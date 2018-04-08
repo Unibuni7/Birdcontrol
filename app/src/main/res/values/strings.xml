@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Bird control</string>
+    <string name="Sign_In">Sign in</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="Sign_Up">Sign up</string>
+    <string name="Make_account">If you don not have an account, sign up</string>
+    <string name="Goto_Signin">If you already have an account, click on sign in</string>
+    <string name="pass2">Re-enter password</string>
+</resources>
