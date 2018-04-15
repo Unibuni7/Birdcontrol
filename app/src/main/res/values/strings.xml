@@ -7,4 +7,8 @@
     <string name="Make_account">If you don not have an account, sign up</string>
     <string name="Goto_Signin">If you already have an account, click on sign in</string>
     <string name="pass2">Re-enter password</string>
+    <string name="birds">Watch Birds</string>
+    <string name="picture">Picture Birds</string>
+    <string name="info">Personal Information</string>
+
 </resources>

@@ -76,10 +76,11 @@ public class RegisterActivity extends AppCompatActivity {
             firebaseAuth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-
+                    progressDialog.dismiss();
                     if (task.isSuccessful()) {
-                        progressDialog.dismiss();
+
                         Toast.makeText(RegisterActivity.this,"You are registered", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), FrontActivity.class));
                     } else {
                         Toast.makeText(RegisterActivity.this,"Try again, the registration failed",Toast.LENGTH_SHORT).show();
 

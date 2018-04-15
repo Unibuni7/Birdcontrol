@@ -67,9 +67,9 @@ public class LoginActivity extends AppCompatActivity{
                 progressDialog.dismiss();
 
                 if (task.isSuccessful()){
-                    // Start the profile activity
+                    // Start the front activity
                     finish();
-                    //startActivity(new Intent(getApplicationContext(), FrontPageActivity.class));
+                    startActivity(new Intent(getApplicationContext(), FrontActivity.class));
                 } else {
                     Toast.makeText(LoginActivity.this, "Access denied, please try again", Toast.LENGTH_SHORT).show();
                 }
