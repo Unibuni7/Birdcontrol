@@ -36,7 +36,7 @@ import java.util.HashMap;
 
 public class BirdWatch extends AppCompatActivity {
     ListView listView;
-    private String TAG = LoginActivity.class.getSimpleName();
+    private String TAG;
 
     ArrayList<HashMap<String,String>> BirdList;
 

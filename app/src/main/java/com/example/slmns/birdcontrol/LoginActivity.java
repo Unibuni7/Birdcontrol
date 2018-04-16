@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.io.Serializable;
 
 public class LoginActivity extends AppCompatActivity{
     private Button btnsignin;
@@ -40,6 +43,9 @@ public class LoginActivity extends AppCompatActivity{
 
     }
 
+
+
+
     public void SignIn(View view) {
         String email = etEmail.getText().toString().trim();
         String pass = etPassword.getText().toString().trim();
@@ -60,6 +66,8 @@ public class LoginActivity extends AppCompatActivity{
 
         progressDialog.setMessage("Signing in ....");
         progressDialog.show();
+        final Intent intent = new Intent(this,FrontActivity.class);
+        intent.putExtra(FrontActivity.EMAIL, etEmail.toString());
 
         firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -69,12 +77,18 @@ public class LoginActivity extends AppCompatActivity{
                 if (task.isSuccessful()){
                     // Start the front activity
                     finish();
-                    startActivity(new Intent(getApplicationContext(), FrontActivity.class));
+                    startActivity(intent);
+                    //startActivity(new Intent(getApplicationContext(), FrontActivity.class));
+
                 } else {
                     Toast.makeText(LoginActivity.this, "Access denied, please try again", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+
+
+
 
     }
 
