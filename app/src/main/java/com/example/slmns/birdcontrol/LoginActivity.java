@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity{
         progressDialog.setMessage("Signing in ....");
         progressDialog.show();
         final Intent intent = new Intent(this,FrontActivity.class);
-        intent.putExtra(FrontActivity.EMAIL, etEmail.toString());
+        intent.putExtra(FrontActivity.Companion.getEMAIL(), etEmail.toString());
 
         firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
